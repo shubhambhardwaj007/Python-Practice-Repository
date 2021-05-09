@@ -1,4 +1,4 @@
-from  flask import Flask
+from  flask import Flask,render_template
 import os
 import subprocess
 app = Flask("iiec-rise")
@@ -12,3 +12,4 @@ def mysearch():
 @app.route("/email")
 def myemail():
     print("MY PAGE : EMAIL.........")
+    return render_template("email.html")
