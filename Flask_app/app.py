@@ -1,9 +1,14 @@
-from Flask import Flask
-app=flask()
+from  flask import Flask
+import os
+import subprocess
+app = Flask("iiec-rise")
 
 @app.route("/search")
 def mysearch():
-    print("SEARCH...........")
+    data=subprocess.getoutput("date /t")
+    print("MY PAGE : SEARCH...........")
+    print(data)
+    return(data)
 @app.route("/email")
 def myemail():
-    print("EMAIL.........")
+    print("MY PAGE : EMAIL.........")
