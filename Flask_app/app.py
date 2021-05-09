@@ -1,15 +1,13 @@
 from  flask import Flask,render_template
-import os
 import subprocess
-app = Flask("iiec-rise")
+app = Flask("myapp")
 
-@app.route("/search")
+@app.route("/")
 def mysearch():
-    data=subprocess.getoutput("date /t")
-    print("MY PAGE : SEARCH...........")
-    print(data)
-    return(data)
-@app.route("/email")
-def myemail():
-    print("MY PAGE : EMAIL.........")
-    return render_template("email.html")
+    print("I AM IN HOME DIR")
+    return("I AM IN HOME DIR")
+@app.route("/menu")
+def mymenu():
+    print("MY PAGE : menu page")
+    html_code = render_template("mymenu.html", name= "dynamic_name",cname="dynamic_cname")
+    return html_code
