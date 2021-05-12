@@ -4,11 +4,14 @@ app=Flask("myiiec")
 def myform():
     return render_template("basic.html")
 
-@app.route("/data",methods=['GET'])
+@app.route("/data",methods=['POST'])
 def mydata():
-    if request.method=="GET":
-        data=request.args.get("x")
+    if request.method=="POST":
+        data=request.form.get("x")
         print(data)
     return "data"
+@app.route("/name")
+def myname():
+    return "vimsl"
 
 app.run(port=5555,debug=True)
