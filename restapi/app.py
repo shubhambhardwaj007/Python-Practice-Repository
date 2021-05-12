@@ -10,8 +10,8 @@ def mydata():
         data=request.form.get("x")
         print(data)
     return "data"
-@app.route("/name")
-def myname():
-    return "vimsl"
+@app.route("/name/<y>/<x>/<z>")
+def myname(x,y,z):
+    return x,y,z
 
 app.run(port=5555,debug=True)
